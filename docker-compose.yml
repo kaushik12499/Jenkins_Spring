@@ -1,0 +1,10 @@
+version '3.3'
+
+services:
+  Jenkins_Spring:
+    image: Jenkins_Spring:latest
+    network_mode: bridge
+    container_name: Jenkins_Spring
+    build:
+      context:
+      dockerfile: Dockerfile
