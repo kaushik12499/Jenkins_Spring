@@ -12,6 +12,8 @@ pipeline{
         stage('Build'){
             steps{
                 sh 'mvn -f ./pom.xml clean install package'
+                sh 'docker-compose build'
+                sh 'docker-compose up'
             }
             post{
                 success{
