@@ -11,14 +11,9 @@ pipeline{
         }
         stage('Build'){
             steps{
-                sh 'mvn -f ./pom.xml clean install package'
+                sh 'mvn clean install package'
                 sh 'docker-compose build'
-                sh 'docker-compose up'
-            }
-            post{
-                success{
-                    archiveArtifacts(artifacts: 'target/*.war', allowEmptyArchive: true)
-                }
+                sh 'docker-compose up -d'
             }
         }
     }
