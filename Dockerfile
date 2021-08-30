@@ -1,3 +1,2 @@
-FROM maven:3.6.3-jdk-11-slim AS build
-WORKDIR /Jenkins_Spring
-
+FROM tomcat:8.0.21-jre8
+COPY target/*.war /usr/local/tomcat/webapps/spring-mvc-maven.war

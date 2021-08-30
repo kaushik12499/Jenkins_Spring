@@ -1,10 +1,11 @@
-version '3.3'
-
+version: '3.4'
 services:
-  Jenkins_Spring:
-    image: Jenkins_Spring:latest
+  Jenkinsspring:
+    image: jenkinsspring:latest
     network_mode: bridge
-    container_name: Jenkins_Spring
+    container_name: jenkinsspring
     build:
-      context:
+      context: .
       dockerfile: Dockerfile
+    ports:
+      - 8085:8080
